@@ -1,0 +1,17 @@
+Source: kali-undercover
+Section: misc
+Priority: optional
+Maintainer: Kali Developers <devel@kali.org>
+Uploaders: Daniel Ruiz de Alegría <daniel@drasite.com>, Raphaël Hertzog <raphael@offensive-security.com>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.4.1
+Vcs-Git: https://gitlab.com/kalilinux/packages/kali-undercover.git
+Vcs-Browser: https://gitlab.com/kalilinux/packages/kali-undercover
+
+Package: kali-undercover
+Architecture: all
+Depends: xfce4, xfce4-whiskermenu-plugin, python3, ${misc:Depends}
+Suggests: gtk2-engines-murrine
+Description: Kali Undercover Mode
+ This package contains window and icon themes besides the desktop application 
+ for kali undercover mode.
