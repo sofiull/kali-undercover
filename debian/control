@@ -29,7 +29,7 @@ Depends:
  ${python3:Depends}
 Suggests: gtk2-engines-murrine
 Description: Kali Undercover Mode
- Run “kali-undercover” and you will instantly switch your XFCE desktop into
+ Run “kali-undercover” and you will instantly switch your Xfce desktop into
  a Windows 10 desktop that will no longer draw attention to your activities.
  .
  Run it a second time to escape the cover mode and get back your original

@@ -1,7 +1,8 @@
 [Desktop Entry]
-Name=Undercover Mode
+Name=Kali Undercover Mode
 Exec=kali-undercover
 Terminal=false
 Type=Application
 Icon=kali-undercover
 OnlyShowIn=XFCE;
+Keywords=windows;theme;desktop;
