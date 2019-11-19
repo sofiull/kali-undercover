@@ -54,10 +54,8 @@ disable_undercover() {
 if [ -f $DIR/lock ]; then
 	disable_undercover
 	sleep 1
-	notify-send -i dialog-information 'Desktop setting restored'
+	notify-send -i dialog-information 'Desktop settings restored'
 else
 	enable_undercover
-	sleep 1
-	notify-send -i xfce4-settings 'Updates are available' 'Select this message to install'
 fi
 
