@@ -13,5 +13,8 @@ Architecture: all
 Depends: libnotify-bin, psmisc, xfce4, xfce4-whiskermenu-plugin, xfce4-power-manager-plugins, xfce4-pulseaudio-plugin, python3, ${misc:Depends}
 Suggests: gtk2-engines-murrine
 Description: Kali Undercover Mode
- This package contains window and icon themes besides the desktop application 
- for kali undercover mode.
+ Run “kali-undercover” and you will instantly switch your XFCE desktop into
+ a Windows 10 desktop that will no longer draw attention to your activities.
+ .
+ Run it a second time to escape the cover mode and get back your original
+ desktop settings.
