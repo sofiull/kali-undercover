@@ -13,20 +13,20 @@ mkdir -p $DIR
 killall xfce4-notifyd
 
 set_xconf_settings() {
-	xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_THEME"
-	xfconf-query -c xfwm4 -p /general/theme -s "$WM_THEME"
-	xfconf-query -c xsettings -p /Net/IconThemeName -s "$ICON_THEME"
-	xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "$CURSOR_THEME"
-	xfconf-query -c xsettings -p /Gtk/FontName -s "$FONT"
+	xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "$GTK_THEME"
+	xfconf-query -c xfwm4 -p /general/theme -n -t string -s "$WM_THEME"
+	xfconf-query -c xsettings -p /Net/IconThemeName -n -t string -s "$ICON_THEME"
+	xfconf-query -c xsettings -p /Gtk/CursorThemeName -n -t string -s "$CURSOR_THEME"
+	xfconf-query -c xsettings -p /Gtk/FontName -n -t string -s "$FONT"
 }
 
 enable_undercover() {
 	cat <<-EOF > $DIR/lock
-		GTK_THEME="$(xfconf-query -c xsettings -p /Net/ThemeName)"
-		WM_THEME="$(xfconf-query -c xfwm4 -p /general/theme)"
-		ICON_THEME="$(xfconf-query -c xsettings -p /Net/IconThemeName)"
-		CURSOR_THEME="$(xfconf-query -c xsettings -p /Gtk/CursorThemeName)"
-		FONT="$(xfconf-query -c xsettings -p /Gtk/FontName)"
+		GTK_THEME="$(xfconf-query -c xsettings -p /Net/ThemeName 2> /dev/null)"
+		WM_THEME="$(xfconf-query -c xfwm4 -p /general/theme 2> /dev/null)"
+		ICON_THEME="$(xfconf-query -c xsettings -p /Net/IconThemeName 2> /dev/null)"
+		CURSOR_THEME="$(xfconf-query -c xsettings -p /Gtk/CursorThemeName 2> /dev/null)"
+		FONT="$(xfconf-query -c xsettings -p /Gtk/FontName 2> /dev/null)"
 	EOF
 	GTK_THEME='Windows-10'
 	WM_THEME='Windows-10'
@@ -37,7 +37,7 @@ enable_undercover() {
 	$XFCE4_PANEL_PROFILES save $USER_PANEL_PROFILE
 	$XFCE4_PANEL_PROFILES load $KALI_UNDERCOVER_PANEL_PROFILE
 	(cd $CONF_FILES; \
-	find -type f -exec mv ~/.config/{} ~/.config/{}.undercover \;)
+	find -type f -exec sh -c '[ -f ~/.config/{} ] && mv ~/.config/{} ~/.config/{}.undercover' \;)
 	cp -r $CONF_FILES/* ~/.config/
 }
 
@@ -53,8 +53,6 @@ disable_undercover() {
 
 if [ -f $DIR/lock ]; then
 	disable_undercover
-	sleep 1
-	notify-send -i dialog-information 'Desktop settings restored'
 else
 	enable_undercover
 fi
