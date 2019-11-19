@@ -1,5 +1,13 @@
 kali-undercover (2019.4.0) kali-dev; urgency=low
 
+  [ Daniel Ruiz de Alegría ]
   * Initial Release.
+
+  [ Raphaël Hertzog ]
+  * Add psmisc to Depends for killall
+  * Don't install LICENSE.md but update the copyright file
+  * Add more XFCE plugins that are used in the cover mode
+  * Rewrite the long description
+  * Use dh-python for python 3 dependencies
 
  -- Daniel Ruiz de Alegría <daniel@drasite.com>  Fri, 15 Nov 2019 10:58:22 +0100

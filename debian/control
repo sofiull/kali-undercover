@@ -2,18 +2,31 @@ Source: kali-undercover
 Section: misc
 Priority: optional
 Maintainer: Kali Developers <devel@kali.org>
-Uploaders: Daniel Ruiz de Alegría <daniel@drasite.com>, Raphaël Hertzog <raphael@offensive-security.com>
-Build-Depends: debhelper-compat (= 12), dh-python,
+Uploaders:
+ Daniel Ruiz de Alegría <daniel@drasite.com>,
+ Raphaël Hertzog <raphael@offensive-security.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-python,
+ gir1.2-glib-2.0,
  python3,
- python3-gi,
- gir1.2-glib-2.0
+ python3-gi
 Standards-Version: 4.4.1
 Vcs-Git: https://gitlab.com/kalilinux/packages/kali-undercover.git
 Vcs-Browser: https://gitlab.com/kalilinux/packages/kali-undercover
 
 Package: kali-undercover
 Architecture: all
-Depends: libnotify-bin, psmisc, xfce4, xfce4-whiskermenu-plugin, xfce4-power-manager-plugins, xfce4-pulseaudio-plugin, ${python3:Depends}, ${misc:Depends}, gir1.2-glib-2.0
+Depends:
+ gir1.2-glib-2.0,
+ libnotify-bin,
+ psmisc,
+ xfce4,
+ xfce4-power-manager-plugins,
+ xfce4-pulseaudio-plugin,
+ xfce4-whiskermenu-plugin,
+ ${misc:Depends},
+ ${python3:Depends}
 Suggests: gtk2-engines-murrine
 Description: Kali Undercover Mode
  Run “kali-undercover” and you will instantly switch your XFCE desktop into
