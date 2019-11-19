@@ -10,6 +10,7 @@ Comment: Beware some of the graphical elements are protected by the
 
 Files: share/themes/Windows-10/* share/icons/Windows-10-Icons/*
 Copyright: © 2015-2019 Christian Medel (Elbullazul) <cmedelahumada@gmail.com>
+License: GPL-3.0+
 Comment:
  Based on the Windows 10 theme maintained here:
  https://github.com/B00merang-Project/Windows-10
