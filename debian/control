@@ -10,7 +10,7 @@ Vcs-Browser: https://gitlab.com/kalilinux/packages/kali-undercover
 
 Package: kali-undercover
 Architecture: all
-Depends: libnotify-bin, psmisc, xfce4, xfce4-whiskermenu-plugin, python3, ${misc:Depends}
+Depends: libnotify-bin, psmisc, xfce4, xfce4-whiskermenu-plugin, xfce4-power-manager-plugins, xfce4-pulseaudio-plugin, python3, ${misc:Depends}
 Suggests: gtk2-engines-murrine
 Description: Kali Undercover Mode
  This package contains window and icon themes besides the desktop application 
