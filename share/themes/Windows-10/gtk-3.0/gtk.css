@@ -2812,6 +2812,12 @@ XfdesktopIconView.view:active {
   min-height: 2px;
   background: shade(#CCE8FF, 0.8); }
 
+/* Hide thunar root warning */
+.thunar .warning {
+  opacity: 0;
+  font-size: 0;
+  margin: -10px 0; }
+
 .nemo-window .nemo-window-pane widget.entry {
   border: 1px solid;
   border-radius: 3px;
