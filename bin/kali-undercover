@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ $(pgrep -u $(whoami) xfconfd\|xfce4-panel | wc -l) -lt 2 ]
+then
+	notify-send -i dialog-warning 'Undercover Mode only works on Xfce Destkop'
+	exit 1
+fi
+
 DIR=~/.local/share/kali-undercover/
 SHARE_DIR=/usr/share/kali-undercover/
 CONF_FILES=$SHARE_DIR/config/
@@ -10,7 +16,7 @@ USER_PANEL_PROFILE=$DIR/user-panel-profile.tar.bz
 mkdir -p $DIR
 
 # Hide existing notifications
-killall xfce4-notifyd
+killall xfce4-notifyd 2> /dev/null
 
 set_xconf_settings() {
 	xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "$GTK_THEME"
