@@ -50,7 +50,7 @@ enable_undercover() {
 			'[ -f ~/.config/"$1" ] && mv ~/.config/"$1" ~/.config/"${1}.undercover"' _ {} \;)
 	cp -r $CONF_FILES/* ~/.config/
 	[ -f ~/.face ] && mv ~/.face ~/.face.undercover
-	printf ': undercover && export PS1='\''C:${PWD//\//\\\\\}> '\' >> .bashrc
+	printf ': undercover && export PS1='\''C:${PWD//\//\\\\\}> '\' >> ~/.bashrc
 }
 
 disable_undercover() {
@@ -62,7 +62,7 @@ disable_undercover() {
 	find ~/.config -name '*.undercover' -exec sh -c \
 		'mv "$1" "$(echo $1 | sed 's/.undercover//')"' _ {} \;
 	[ -f ~/.face.undercover ] && mv ~/.face.undercover ~/.face
-	sed '/: undercover/d' -i .bashrc
+	sed -i -e '/: undercover/d' ~/.bashrc
 	rm $DIR/lock
 }
 
