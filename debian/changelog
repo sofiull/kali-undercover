@@ -1,3 +1,16 @@
+kali-undercover (2020.1.0) kali-dev; urgency=medium
+
+  [ Daniel Ruiz de Alegría ]
+  * Check if Xfce desktop is used
+  * Simulate MS-DOS prompt
+
+  [ Raphaël Hertzog ]
+  * Use full path to modify ~/.bashrc
+  * Print an error message on stderr too when not in Xfce
+  * Add dependency on procps for pgrep
+
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Tue, 03 Dec 2019 14:25:01 +0100
+
 kali-undercover (2019.4.3) kali-dev; urgency=medium
 
   * Add Depends to fonts-liberation
