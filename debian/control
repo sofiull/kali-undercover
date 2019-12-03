@@ -21,6 +21,7 @@ Depends:
  fonts-liberation,
  gir1.2-glib-2.0,
  libnotify-bin,
+ procps,
  psmisc,
  xfce4,
  xfce4-power-manager-plugins,
