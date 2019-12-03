@@ -2,7 +2,8 @@
 
 if [ $(pgrep -u $(whoami) xfconfd\|xfce4-panel | wc -l) -lt 2 ]
 then
-	notify-send -i dialog-warning 'Undercover Mode only works on Xfce Destkop'
+	echo "ERROR: Undercover Mode only works on Xfce desktop" >&2
+	notify-send -i dialog-warning 'Undercover Mode only works on Xfce desktop'
 	exit 1
 fi
 
